@@ -6,11 +6,11 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:08:42 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/09 14:38:29 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:30:02 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	char	*buf;
@@ -29,19 +29,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		return (buf);
 	return (NULL);
 }
-
-int main(void)
-{
-    char	str[] = "Les amis de 42";
-    char	str1[] = "Les amis de 42";
-	void	*tmp;
-	void	*tmp1;
-
-	tmp = ft_memchr(str, 'e', 10);
-	tmp1 = memchr(str1, 'e', 10);
-	
-    printf ("ft_memchr = %s\n", (char *)tmp);
-    printf ("memchr = %s\n", (char *)tmp1);
-    return (0);
-}
-

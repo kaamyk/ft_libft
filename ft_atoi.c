@@ -6,12 +6,9 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:30:55 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/09 17:21:26 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:41:08 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <stdlib.h>
-
 int	ft_atoi(const char *str)
 {
 	int	result;
@@ -32,13 +29,4 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (result * negative);
-}
-
-int	main(void)
-{
-	char	str[] = "-2146473648";
-	
-	printf("%d\n", ft_atoi(str));
-	printf("%d", atoi(str));
-	return (0);
 }

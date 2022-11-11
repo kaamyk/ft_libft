@@ -6,10 +6,10 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:57:36 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/10 15:13:27 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:37:15 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -20,10 +20,3 @@ size_t	ft_strlen(const char *s)
 		tmp++;
 	return (tmp - s);
 }
-
-/*int		main(void)
-{
-	printf ("%ld\n", ft_strlen("12345"));
-	return (0);
-}
-*/

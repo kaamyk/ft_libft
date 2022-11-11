@@ -6,21 +6,12 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:00:45 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/08 11:59:08 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:47:00 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-size_t	ft_strlen(const char *str)
-{
-	char	*tmp;
-
-	tmp = src;
-	while (*tmp)
-		tmp++;
-	return (tmp - src);
-}
-
-size_t	ft_strlcpy(char *dest, char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	unsigned int	i;
 	unsigned int	srclen;

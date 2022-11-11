@@ -6,14 +6,11 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:45:14 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/10 15:14:04 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:35:35 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-
-size_t		ft_strlen(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*result;
@@ -37,15 +34,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	result[i] = 0;
 	return (result);
-}
-
-int		main(void)
-{
-	char	*str = "Les copains";
-	char	*str1 = "de 42";
-	char	*n_str;	
-
-	n_str = ft_strjoin(str, str1);
-	printf("%s\n", n_str);
-	return (0);
 }

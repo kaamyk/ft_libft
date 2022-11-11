@@ -6,11 +6,10 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 09:22:44 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/10 14:04:49 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:31:28 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <bsd/string.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -38,17 +37,4 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		}
 	}
 	return (dest);
-}
-
-int	main(void)
-{
-	 char	dest[100] = "Nom d'une ";
-	 char	dest1[100] = "Nom d'une ";
-	 char	src[] = "PIPE !";
-	 char	src1[] = "PIPE !";
-
-	 ft_memmove(dest, src, 5);
-	 printf("%s\n", dest);
-	 memmove(dest1, src1, 5);
-	 printf("%s\n", dest1);
 }

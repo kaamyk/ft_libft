@@ -6,9 +6,10 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:22:46 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/08 11:42:11 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:38:30 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

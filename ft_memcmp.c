@@ -6,11 +6,10 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:39:26 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/09 15:28:15 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:30:40 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -37,15 +36,4 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		return (-1);
 	else
 		return (0);
-}
-
-int	main(void)
-{
-	char	str[] = "Nom d'une pipe !";
-	char	str1[] = "Nom d'une pipe !";
-
-	printf("%d\n", memcmp(str, str1, 5));
-	printf("%d\n", ft_memcmp(str, str1, 5));
-
-	return (0);
 }

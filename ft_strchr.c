@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 11:19:44 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/10 10:53:20 by anvincen         ###   ########.fr       */
+/*   Created: 2022/11/11 16:53:08 by anvincen          #+#    #+#             */
+/*   Updated: 2022/11/11 17:09:01 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -26,14 +26,4 @@ char	*ft_strchr(const char *s, int c)
 	if (c == 0)
 		return (buf);
 	return (NULL);
-}
-
-int main(void)
-{
-	char str[] = "Les amis de 42";
-	char str1[] = "Les amis de 42";
-	
-	printf ("%s\n", ft_strchr(str, 0));
-	printf ("%s\n", strchr(str1, 0));
-	return (0);
 }

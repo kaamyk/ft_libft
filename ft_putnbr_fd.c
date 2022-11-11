@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 17:53:04 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/11 16:35:09 by anvincen         ###   ########.fr       */
+/*   Created: 2022/11/11 14:02:36 by anvincen          #+#    #+#             */
+/*   Updated: 2022/11/11 17:30:29 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	char	*dup;
-
-	dup = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (dup == NULL)
-		return (NULL);
-	i = 0;
-	while (s[i])
+	long	nb;
+	
+	nb = n;
+	if (nb < 0)
 	{
-		dup[i] = s[i];
-		i++;
+		write (1, "-", 1);
+		nb *= -1;
+		n *= -1;
 	}
-	dup[i] = 0;
-	return (dup);
+	if (nb >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd((n % 10 + '0'), fd);
 }
