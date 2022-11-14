@@ -6,7 +6,7 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 16:53:08 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/11 17:09:01 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/14 10:04:07 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strchr(const char *s, int c)
 	buf = (char *) s;
 	while (*buf)
 	{
-		if (*buf == c)
+		if (*buf == (char)c)
 			return (buf);
 		buf++;
 	}
