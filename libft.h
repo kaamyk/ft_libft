@@ -6,17 +6,17 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:34:44 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/11 17:19:15 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:18:40 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
+# define LIBFT_H
 
-#include <unistd.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include <stdint.h>
+# include <unistd.h>
+# include <stddef.h>
+# include <stdlib.h>
+# include <stdint.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -35,14 +35,14 @@ void	*ft_memset(void *s, int c, size_t n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-void	ft_putstr_fd(char  *s, int fd);
+void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const *s1, char const *s2);
-size_t	ft_strlcat(char *dst, char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char	*dest, const char *src, size_t size);
 size_t	ft_strlen(const char *s);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));

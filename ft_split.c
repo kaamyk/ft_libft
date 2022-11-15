@@ -6,7 +6,7 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 11:46:23 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/11 16:48:31 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:06:34 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -34,17 +34,20 @@ char	**ft_split(char const *s, char c)
 	res = malloc(sizeof(char *) * ft_wdcount(s, c));
 	while (*s)
 	{
-		if (*(s + i) == c || !*(s + i))
+		if (*s != c)
 		{
+			while (*(s + i) != c && *s)
+				i++;
 			*res = malloc(sizeof(char) * i);
 			if (!*res)
 				return (NULL);
-			ft_strlcpy(*res, s, i);
+			ft_strlcpy(*res, s, i + 1);
 			res++;
 			s += i;
 			i = 0;
 		}
-		i++;
+		else
+			s++;
 	}
 	return (res);
 }

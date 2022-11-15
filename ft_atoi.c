@@ -6,7 +6,7 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:30:55 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/14 13:40:51 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/15 12:07:13 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_atoi(const char *nptr)
@@ -17,7 +17,7 @@ int	ft_atoi(const char *nptr)
 	result = 0;
 	negative = 1;
 	while (*nptr == ' ' || *nptr == '\v' || *nptr == '\t' || *nptr == '\f'
-			|| *nptr == '\r' || *nptr == '\n')
+		|| *nptr == '\r' || *nptr == '\n')
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 	{
