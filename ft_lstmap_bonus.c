@@ -6,11 +6,10 @@
 /*   By: anvincen <anvincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 10:33:01 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/16 15:51:12 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/17 11:53:08 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -25,7 +24,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!n_list)
 			n_list = ft_lstnew(f(lst->content));
 		else
-		{
+		{	
 			n_elm = ft_lstnew(f(lst->content));
 			if (!n_elm)
 			{
@@ -33,7 +32,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 				return (NULL);
 			}
 			ft_lstadd_back(&n_list, n_elm);
-			lst = lst->next;
 		}
 		lst = lst->next;
 	}

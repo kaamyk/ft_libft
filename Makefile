@@ -6,7 +6,7 @@
 #    By: anvincen <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 15:03:29 by anvincen          #+#    #+#              #
-#    Updated: 2022/11/16 10:53:26 by anvincen         ###   ########.fr        #
+#    Updated: 2022/11/17 11:57:30 by anvincen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,14 +24,14 @@ BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 		ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c \
 
 
-all: $(NAME)
+all: $(NAME) bonus clean
 
-$(NAME):	clean
+$(NAME):
 	gcc -Wall -Wextra -Werror -c $(SRCS)
 	ar rc $(NAME) *.o
 	ranlib $(NAME)
 
-bonus:		clean
+bonus:
 	gcc -Wall -Wextra -Werror -c $(BONUS)
 	ar rc $(NAME) *_bonus.o
 	ranlib $(NAME)
