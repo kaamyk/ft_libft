@@ -6,7 +6,7 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:53:04 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/11 16:35:09 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/21 10:06:39 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *s)
 	char	*dup;
 
 	dup = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (dup == NULL)
+	if (!dup)
 		return (NULL);
 	i = 0;
 	while (s[i])

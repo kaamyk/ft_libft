@@ -6,29 +6,29 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:30:00 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/11 16:39:14 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/19 14:16:04 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	*b_buf;
 	size_t	i;
+	size_t	j;
 
-	b_buf = (char *) big;
-	if (*little == 0)
-		return (b_buf);
-	while (*b_buf)
+	i = 0;
+	if (!*little)
+		return ((char *)big);
+	while (big[i] && i < len)
 	{
-		i = 0;
-		while (*(b_buf + i) == *(little + i) && i < len)
+		j = 0;
+		while (big[i + j] == little[j] && i + j < len)
 		{
-			if (!*(little + i + 1))
-				return (b_buf);
-			i++;
+			if (!little[j + 1])
+				return ((char *)(big + i));
+			j++;
 		}
-		b_buf++;
+		i++;
 	}
 	return (NULL);
 }

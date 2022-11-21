@@ -6,7 +6,7 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 11:14:49 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/17 15:16:51 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/21 10:07:56 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -23,44 +23,29 @@ int	ft_char_in_set(char const c, char const *set)
 	return (0);
 }
 
-int	ft_slen(char const *s, const char *buf)
-{
-	int	len;
-
-	len = 0;
-	while (s != buf)
-	{
-		s++;
-		len++;
-	}
-	return (len);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char		*n_str;
 	const char	*buf;
-	int			i;
 
-	i = 0;
-	while (ft_char_in_set(*s1, set))
+	while (ft_char_in_set(*s1, set) && *s1)
 		s1++;
+	if (!*s1)
+	{
+		n_str = malloc(sizeof(char) * 1);
+		if (!n_str)
+			return (NULL);
+		*n_str = 0;
+		return (n_str);
+	}
 	buf = s1;
 	while (*(buf + 1))
 		buf++;
 	while (ft_char_in_set(*buf, set) && buf >= s1)
 		buf--;
-	printf("\nft_slen = %d\n", ft_slen(s1, buf));
-	printf("len = %ld\n", buf - s1 + 2);
 	n_str = malloc(sizeof(char) * (buf - s1 + 2));
 	if (!n_str)
 		return (NULL);
-	while (s1 <= buf)
-	{
-		n_str[i] = *s1;
-		i++;
-		s1++;
-	}
-	*(n_str + i) = 0;
+	ft_strlcpy(n_str, s1, (buf - s1 + 2));
 	return (n_str);
 }

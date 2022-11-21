@@ -6,7 +6,7 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 08:59:49 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/17 13:49:19 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/21 09:59:53 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -56,24 +56,40 @@ void	ft_scat(char **dest, const char **src, int len)
 	**dest = 0;
 }
 
+char	**ft_freetab(char *s1, char **s2)
+{
+	while (s1)
+	{
+		free(s1);
+		s1++;
+	}
+	while (s2)
+	{
+		free(s2);
+		s2++;
+	}
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
 	char	*tmp;
-	int		wlen;
 	int		j;
 
 	tab = malloc(sizeof(char *) * ft_wdcount(s, c));
+	if (!tab)
+		return (ft_freetab(NULL, tab));
 	j = 0;
 	while (*s)
 	{
 		if (*s != c)
 		{
-			wlen = ft_wdlen(s, c);
-			tab[j] = malloc(sizeof(char) * wlen);
+			tab[j] = malloc(sizeof(char) * ft_wdlen(s, c));
+			if (!(*tab))
+				return (ft_freetab(*tab, tab));
 			tmp = tab[j];
-			ft_scat(&tab[j], &s, wlen);
-			tab[j] = tmp;
+			ft_scat(&tmp, &s, ft_wdlen(s, c));
 			j++;
 		}
 		else

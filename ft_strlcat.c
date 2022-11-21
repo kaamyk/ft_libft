@@ -6,7 +6,7 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:12:52 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/15 12:43:12 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/19 13:52:54 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	while (i < size && dst[i])
 		i++;
 	ret = ft_strlen(src) + i;
-	while (src[j] && (i + j) < size - i && size)
+	while (src[j] && (i + j) < size - 1 && size)
 	{
 		dst[i + j] = src[j];
 		j++;
