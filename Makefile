@@ -6,7 +6,7 @@
 #    By: anvincen <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 15:03:29 by anvincen          #+#    #+#              #
-#    Updated: 2022/11/21 17:33:08 by anvincen         ###   ########.fr        #
+#    Updated: 2022/11/21 17:38:21 by anvincen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,12 +28,10 @@ BONUS	=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 
 B_OBJS	=	$(BONUS:.c=.o)
 
-CC		=	gcc
-
 FLAGS	=	-Werror -Wall -Wextra
 
 .c.o:
-		$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
+		gcc $(FLAGS) -c $< -o $(<:.c=.o)
 
 all:		$(NAME) bonus
 
