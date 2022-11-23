@@ -6,29 +6,11 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 08:59:49 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/21 09:59:53 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/23 18:10:42 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include <stdio.h>
-
-int	ft_wdcount(const char *s, int c)
-{
-	int	count;
-
-	count = 1;
-	if (!*s)
-		return (count);
-	while (*s)
-	{
-		if (*s == c && (*(s + 1) != c && *(s + 1)))
-			count++;
-		if (!*(s + 1) && count <= 2)
-			return (2);
-		s++;
-	}
-	return (count);
-}
 
 int	ft_wdlen(const char *s, int c)
 {
@@ -39,6 +21,31 @@ int	ft_wdlen(const char *s, int c)
 		len++;
 	len += 1;
 	return (len);
+}
+
+int	ft_wdcount(const char *s, int c)
+{
+	int	count;
+
+	count = 1;
+	if (!*s)
+		return (count);
+	while (*s)
+	{
+		while (*s == c && *s)
+			s++;
+		if (*s && ft_wdlen(s, c))
+		{
+			count++;
+			s += ft_wdlen(s, c) - 1;
+		}
+		if (!*s)
+		{
+			//printf ("count == %d\n", count);
+			return (count);
+		}
+	}
+	return (count);
 }
 
 void	ft_scat(char **dest, const char **src, int len)
@@ -56,18 +63,17 @@ void	ft_scat(char **dest, const char **src, int len)
 	**dest = 0;
 }
 
-char	**ft_freetab(char *s1, char **s2)
+char	**ft_freetab(char ***s)
 {
-	while (s1)
+	int	i;
+
+	i = 0;
+	while (s[0][i])
 	{
-		free(s1);
-		s1++;
+		free(s[0][i]);
+		i++;
 	}
-	while (s2)
-	{
-		free(s2);
-		s2++;
-	}
+	free (s[0]);
 	return (NULL);
 }
 
@@ -79,7 +85,7 @@ char	**ft_split(char const *s, char c)
 
 	tab = malloc(sizeof(char *) * ft_wdcount(s, c));
 	if (!tab)
-		return (ft_freetab(NULL, tab));
+		return (ft_freetab(&tab));
 	j = 0;
 	while (*s)
 	{
@@ -87,7 +93,7 @@ char	**ft_split(char const *s, char c)
 		{
 			tab[j] = malloc(sizeof(char) * ft_wdlen(s, c));
 			if (!(*tab))
-				return (ft_freetab(*tab, tab));
+				return (ft_freetab(&tab));
 			tmp = tab[j];
 			ft_scat(&tmp, &s, ft_wdlen(s, c));
 			j++;
@@ -97,4 +103,19 @@ char	**ft_split(char const *s, char c)
 	}
 	tab[j] = NULL;
 	return (tab);
+}
+
+int		main(void)
+{
+	int i = 0;
+	char **tab;
+		
+	tab = ft_split("bonjour je m'appelle Arthur", ' ');
+	while (i < 4)
+	{
+		printf("string %d : %s\n", i, tab[i]);
+		i++;
+	}
+	ft_freetab(&tab);
+	return (0);
 }
