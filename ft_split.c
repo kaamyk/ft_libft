@@ -6,7 +6,7 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 08:59:49 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/23 18:10:42 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/23 19:11:08 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -40,10 +40,7 @@ int	ft_wdcount(const char *s, int c)
 			s += ft_wdlen(s, c) - 1;
 		}
 		if (!*s)
-		{
-			//printf ("count == %d\n", count);
 			return (count);
-		}
 	}
 	return (count);
 }
@@ -104,7 +101,7 @@ char	**ft_split(char const *s, char c)
 	tab[j] = NULL;
 	return (tab);
 }
-
+/*
 int		main(void)
 {
 	int i = 0;
@@ -118,4 +115,4 @@ int		main(void)
 	}
 	ft_freetab(&tab);
 	return (0);
-}
+}*/
