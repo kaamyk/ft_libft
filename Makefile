@@ -6,11 +6,11 @@
 #    By: anvincen <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 15:03:29 by anvincen          #+#    #+#              #
-#    Updated: 2022/11/21 17:38:21 by anvincen         ###   ########.fr        #
+#    Updated: 2022/11/24 11:38:24 by anvincen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libft.a
+NAME	=	libft.a
 SRCS	=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
 			ft_strlcat.c ft_strncmp.c ft_substr.c ft_atoi.c ft_isalpha.c \
 			ft_itoa.c ft_memcpy.c  ft_putendl_fd.c ft_strchr.c  ft_strlcpy.c \
@@ -30,18 +30,16 @@ B_OBJS	=	$(BONUS:.c=.o)
 
 FLAGS	=	-Werror -Wall -Wextra
 
-.c.o:
+%.o:		%.c
 		gcc $(FLAGS) -c $< -o $(<:.c=.o)
 
-all:		$(NAME) bonus
+all:		$(NAME)
 
 $(NAME):	$(OBJS)
-		ar rc $(NAME) $(OBJS)
-		ranlib $(NAME)
+		ar rcs $(NAME) $(OBJS)
 
-bonus:		$(B_OBJS)
-		ar rc $(NAME) $(B_OBJS)
-		ranlib $(NAME)
+bonus:		$(NAME) $(B_OBJS) $(OBJS)
+		ar rcs $(NAME) $(B_OBJS) $(OBJS)
 
 clean:
 		rm -f *.o

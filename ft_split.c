@@ -6,11 +6,10 @@
 /*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 08:59:49 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/23 19:11:08 by anvincen         ###   ########.fr       */
+/*   Updated: 2022/11/24 12:08:13 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_wdlen(const char *s, int c)
 {
@@ -101,18 +100,3 @@ char	**ft_split(char const *s, char c)
 	tab[j] = NULL;
 	return (tab);
 }
-/*
-int		main(void)
-{
-	int i = 0;
-	char **tab;
-		
-	tab = ft_split("bonjour je m'appelle Arthur", ' ');
-	while (i < 4)
-	{
-		printf("string %d : %s\n", i, tab[i]);
-		i++;
-	}
-	ft_freetab(&tab);
-	return (0);
-}*/
