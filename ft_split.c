@@ -87,14 +87,13 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	while (*s)
 	{
-		if (*s != c)
+		if (*s != c && ++j)
 		{
-			tab[j] = malloc(sizeof(char) * ft_wdlen(s, c));
+			tab[j - 1] = malloc(sizeof(char) * ft_wdlen(s, c));
 			if (!(*tab))
 				return (ft_freetab(&tab));
-			tmp = tab[j];
+			tmp = tab[j - 1];
 			ft_scat(&tmp, &s, ft_wdlen(s, c));
-			j++;
 		}
 		else
 			s++;

@@ -6,7 +6,7 @@
 #    By: anvincen <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 15:03:29 by anvincen          #+#    #+#              #
-#    Updated: 2022/11/24 11:38:24 by anvincen         ###   ########.fr        #
+#    Updated: 2022/11/28 12:29:04 by anvincen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,10 +29,6 @@ BONUS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 B_OBJS	=	$(BONUS:.c=.o)
 
 FLAGS	=	-Werror -Wall -Wextra
-
-so:
-	$(CC) -nostartfiles -fPIC $(FLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 %.o:		%.c
 		gcc $(FLAGS) -c $< -o $(<:.c=.o)

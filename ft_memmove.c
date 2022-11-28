@@ -22,13 +22,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	s_buf = (const char *) src;
 	if (d_buf > s_buf)
 	{
-		while (n > 0)
-		{
-			d_buf[n - 1] = s_buf[n - 1];
-			n--;
-		}
+		while (n-- > 0)
+			d_buf[n] = s_buf[n];
 	}
 	else
+	{
 		while (n)
 		{
 			*d_buf = *s_buf;
@@ -36,5 +34,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			s_buf++;
 			n--;
 		}
+	}
 	return (dest);
 }
