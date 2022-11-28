@@ -26,20 +26,26 @@ int	ft_len(char const *s, unsigned int start, size_t len)
 	return (slen);
 }
 
+char	*ft_emptstr(char *n_str)
+{
+	n_str = malloc(sizeof(char));
+	if (!n_str)
+		return (NULL);
+	*n_str = 0;
+	return (n_str);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*n_str;
 	unsigned int	slen;
 	size_t			i;
 
-	if (start > ft_strlen(s) || len == 0)
-	{
-		n_str = malloc(sizeof(char));
-		if (!n_str)
-			return (NULL);
-		*n_str = 0;
-		return (n_str);
-	}
+	n_str = NULL;
+	if (!s)
+		return (NULL);
+	if (s && (start > ft_strlen(s) || len == 0))
+		return (ft_emptstr(n_str));
 	slen = ft_len(s, start, len);
 	n_str = malloc (sizeof(char) * (slen + 1));
 	if (!n_str)

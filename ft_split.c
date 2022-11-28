@@ -79,9 +79,11 @@ char	**ft_split(char const *s, char c)
 	char	*tmp;
 	int		j;
 
+	if (!s)
+		return (NULL);
 	tab = malloc(sizeof(char *) * ft_wdcount(s, c));
 	if (!tab)
-		return (ft_freetab(&tab));
+		return (NULL);
 	j = 0;
 	while (*s)
 	{

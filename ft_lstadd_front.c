@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: anvincen <anvincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 13:57:10 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/11 16:33:35 by anvincen         ###   ########.fr       */
+/*   Created: 2022/11/15 19:09:30 by anvincen          #+#    #+#             */
+/*   Updated: 2022/11/15 20:42:12 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	while (s && *s)
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	new->next = *lst;
+	*lst = new;
 }

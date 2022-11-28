@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anvincen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: anvincen <anvincen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 08:38:29 by anvincen          #+#    #+#             */
-/*   Updated: 2022/11/11 16:43:44 by anvincen         ###   ########.fr       */
+/*   Created: 2022/11/15 17:59:01 by anvincen          #+#    #+#             */
+/*   Updated: 2022/11/17 11:40:44 by anvincen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	char		*d_buf;
-	const char	*s_buf;
-	size_t		i;
+	t_list	*n_elm;
 
-	if (!dest && !src)
+	n_elm = malloc (sizeof(t_list));
+	if (!n_elm)
 		return (NULL);
-	d_buf = (char *) dest;
-	s_buf = (const char *) src;
-	i = 0;
-	while (i < n)
-	{
-		d_buf[i] = s_buf[i];
-		i++;
-	}
-	return (dest);
+	n_elm->content = content;
+	n_elm->next = NULL;
+	return (n_elm);
 }
