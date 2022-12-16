@@ -18,7 +18,7 @@ int	ft_wdlen(const char *s, int c)
 	len = 0;
 	while (*(s + len) != c && *(s + len))
 		len++;
-	len += 1;
+	len++;
 	return (len);
 }
 
@@ -33,7 +33,7 @@ int	ft_wdcount(const char *s, int c)
 	{
 		while (*s == c && *s)
 			s++;
-		if (*s && ft_wdlen(s, c))
+		if (*s)
 		{
 			count++;
 			s += ft_wdlen(s, c) - 1;
